@@ -6,11 +6,6 @@ const mongoose = require("mongoose");
 dotenv.config();
 
 const app = express();
-/**
- *
- * mongodb+154.73.166.156://isidore:Blessing1987F@cluster0.mpeghwv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
- * mongodb+srv://<username>:<password>@cluster0.mpeghwv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
- */
 
 mongoose
   .connect(process.env.URI, {
