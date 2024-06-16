@@ -1,6 +1,24 @@
+// import * as dotenv from "dotenv";
+const dotenv = require("dotenv");
 const express = require("express");
+const mongoose = require("mongoose");
+
+dotenv.config();
 
 const app = express();
+/**
+ *
+ * mongodb+154.73.166.156://isidore:Blessing1987F@cluster0.mpeghwv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+ * mongodb+srv://<username>:<password>@cluster0.mpeghwv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+ */
+
+mongoose
+  .connect(process.env.URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("Connexion reussie !"))
+  .catch(() => console.log("Connexion échouée!"));
 
 app.use(express.json());
 
